@@ -154,10 +154,7 @@ input[type="select"] {
   overflow: hidden;
   text-indent: -999em;
   width: 110px;
-  position: absolute;
-  bottom: 20px;
-  left: 50%;
-  margin-left: -55px;
+  margin: 0 auto;
 }
 .star-ratings-sprite-rating {
   background: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/2605/star-rating-sprite.png") repeat-x;
@@ -165,24 +162,6 @@ input[type="select"] {
   float: left;
   height: 21px;
   display: block;
-}
-body {
-  text-align: center;
-  font-family: 'Open Sans', sans-serif;
-  background: #f2fbff;
-}
-em {
-  font-style: italic;
-}
-h1 {
-  font-size: 24px;
-  margin-bottom: 25px;
-  font-weight: bold;
-  text-transform: uppercase;
-}
-h2 {
-  font-size: 16px;
-  margin-bottom: 15px;
 }
 
 
@@ -381,4 +360,54 @@ body {
 .widget:hover .widget__overlay {
   visibility: visible;
   opacity: 1;
+}
+
+
+.notification-area{
+    width: 400px !IMPORTANT;
+    max-height: 200px !important;
+    overflow-y: scroll;
+    background-color: #ecf0f1 !important;
+}
+
+.notification-header{
+    background-color: #0275d8 !important;
+    text-align: center !important;
+}
+
+.notification-header > a {
+    color: white !important;
+    font-size: 16px;
+}
+
+.notification-header > a:hover {
+    background-color: #0275d8 !important;
+}
+
+.notification-area > li > a.item:hover{
+    background-color: #ecf0f1 !important;
+}
+
+.notification-area > li > a.item {
+    white-space: pre-wrap; /* css-3 */    
+    white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+    white-space: -pre-wrap; /* Opera 4-6 */    
+    white-space: -o-pre-wrap; /* Opera 7 */    
+    word-wrap: break-word; /* Internet Explorer 5.5+ */
+    text-align: left !important;
+    color: #908c8d !important;
+}
+.notification-area > li > a.item > span{
+    display: block;
+    width: 100%;
+    font-size: 12px;
+    color: #b4b1b2 !important;
+}
+
+.gplus-ic{
+    margin-top: 15px !important;
+}
+
+.restaurant-div{
+    margin-bottom: 15px;
 }

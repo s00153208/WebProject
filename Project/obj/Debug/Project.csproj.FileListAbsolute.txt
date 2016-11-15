@@ -226,3 +226,7 @@ C:\Users\pa3ck\Desktop\WebProject-master\Project\bin\Microsoft.Owin.Security.OAu
 C:\Users\pa3ck\Desktop\WebProject-master\Project\obj\Debug\Project.csprojResolveAssemblyReference.cache
 C:\Users\pa3ck\Desktop\WebProject-master\Project\obj\Debug\Project.dll
 C:\Users\pa3ck\Desktop\WebProject-master\Project\obj\Debug\Project.pdb
+C:\Users\pa3ck\Desktop\WebProject-master\Project\obj\Debug\Project.Migrations.InitialCreate.resources
+C:\Users\pa3ck\Desktop\WebProject-master\Project\obj\Debug\Project.csproj.GenerateResource.Cache
+C:\Users\pa3ck\Desktop\WebProject-master\Project\obj\Debug\Project.Migrations.Addednotifications.resources
+C:\Users\pa3ck\Desktop\WebProject-master\Project\obj\Debug\Project.Migrations.Editednotifications.resources

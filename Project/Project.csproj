@@ -221,6 +221,7 @@
     <Content Include="Scripts\mdb.min.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\ninja-slider.js" />
+    <Content Include="Scripts\notifications.js" />
     <Content Include="Scripts\respond.js" />
     <Content Include="Scripts\respond.min.js" />
     <Content Include="Scripts\restaurants.js" />
@@ -407,7 +408,21 @@
     <Compile Include="Hotels.aspx.designer.cs">
       <DependentUpon>Hotels.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611151006045_InitialCreate.cs" />
+    <Compile Include="Migrations\201611151006045_InitialCreate.Designer.cs">
+      <DependentUpon>201611151006045_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611151505077_Added notifications.cs" />
+    <Compile Include="Migrations\201611151505077_Added notifications.Designer.cs">
+      <DependentUpon>201611151505077_Added notifications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611151508366_Edited notifications.cs" />
+    <Compile Include="Migrations\201611151508366_Edited notifications.Designer.cs">
+      <DependentUpon>201611151508366_Edited notifications.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\Notification.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Restaurants.aspx.cs">
       <DependentUpon>Restaurants.aspx</DependentUpon>
@@ -449,6 +464,17 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="font\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201611151006045_InitialCreate.resx">
+      <DependentUpon>201611151006045_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611151505077_Added notifications.resx">
+      <DependentUpon>201611151505077_Added notifications.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611151508366_Edited notifications.resx">
+      <DependentUpon>201611151508366_Edited notifications.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

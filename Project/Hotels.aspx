@@ -3,6 +3,9 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
 
+        <asp:TextBox ID="txtNote" runat="server" placeholder="Enter message" CssClass="form-control"></asp:TextBox>
+        <asp:Button ID="btnAddNote" runat="server" Text="Add notification" CssClass="btn btn-primary" OnClick="btnAddNote_Click" />
+
         <div class="row" id="restaurant-cont">
             <!--<% for (int i = 0; i < 12; i++)
                 {%>
@@ -12,8 +15,8 @@
                     <p class="caption lead">Some text</p>
                 </a>
             </div>
-            <% } %>
-        </div> -->
+            <% } %>-->
+        </div> 
 
     </div>
 
@@ -44,7 +47,7 @@
     <div id="map" style="display: none"></div>
 
     <hr />
-
+    <script src="Scripts/notifications.js"></script>
     <script>
 
         var currIndex = 0;

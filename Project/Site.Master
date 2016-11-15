@@ -55,7 +55,6 @@
                         <li><a runat="server" href="~/Hotels">Hotels</a></li>
                         <li><a runat="server" href="~/Restaurants">Restaurants</a></li>
                         <li><a runat="server" href="~/Items?cat=events">Events</a></li>
-                        <li><a runat="server" href="~/Items?cat=tours">Tourism</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
@@ -66,7 +65,19 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li class="dropdown">
+                                    <a href="#" class="dropdown-toggle text-center" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><i class="fa fa-bell-o" style="font-size: 18px" aria-hidden="true"><span class="badge" style="position: relative; top: -10px; left: -3px; background-color: #0b51c5">4</span></i></a>
+                                    <ul class="dropdown-menu notification-area">
+                                        <li class="notification-header"><a href="#">Notifications</a></li>
+                                        <li><a class="item" href="#">Your booking for hotel XXXXX XXXXXXXX XXXXXX has been confirmed.<span>04/04/2016 20:50</span></a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a class="item" href="#">Your booking for hotel XXXXX XXXXXXXX XXXXXX has been confirmed.<span>04/04/2016 20:50</span></a></li>
+                                        <li role="separator" class="divider"></li>
+                                        <li><a class="item" href="#">Your booking for hotel XXXXX XXXXXXXX XXXXXX has been confirmed.<span>04/04/2016 20:50</span></a></li>
+                                        <li role="separator" class="divider"></li>
+                                    </ul>
+                                </li>
+                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Profile</a></li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>

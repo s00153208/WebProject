@@ -27,7 +27,7 @@
                 <div class="col-md-12">
                     <!--Featured image-->
                     <div class="view overlay hm-white-slight">
-                        <img id="placeImage" src="">
+                        <img id="placeImage">
                         <a>
                             <div class="mask "></div>
                         </a>
@@ -109,46 +109,8 @@
                     </div>
                 </div>
             </div>
+            <div id="comment-section">
 
-            <div class="author-box">
-                <div class="row">
-                    <hr>
-                    <div class="col-xs-12 col-sm-2">
-                        <img src="http://2.gravatar.com/avatar/e9de252843e9ff541060127dac7126ed?s=150&d=mm&r=g" class="img-fluid rounded-circle z-depth-2">
-                    </div>
-                    <div class="col-xs-12 col-sm-10">
-                        <p><strong>Michal Szymanski</strong></p>
-                        <div class="personal-sm">
-                            <a class="email-ic"><i class="fa fa-home"></i></a>
-                            <a class="fb-ic"><i class="fa fa-facebook"></i></a>
-                            <a class="tw-ic"><i class="fa fa-twitter"></i></a>
-                            <a class="gplus-ic"><i class="fa fa-google-plus"></i></a>
-                            <a class="li-ic"><i class="fa fa-linkedin"></i></a>
-                            <a class="email-ic"><i class="fa fa-envelope-o"></i></a>
-                        </div>
-                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="author-box">
-                <div class="row">
-                    <hr>
-                    <div class="col-xs-12 col-sm-2">
-                        <img src="http://2.gravatar.com/avatar/e9de252843e9ff541060127dac7126ed?s=150&d=mm&r=g" class="img-fluid rounded-circle z-depth-2">
-                    </div>
-                    <div class="col-xs-12 col-sm-10">
-                        <p><strong>Michal Szymanski</strong></p>
-                        <div class="personal-sm">
-                            <a class="email-ic"><i class="fa fa-home"></i></a>
-                            <a class="fb-ic"><i class="fa fa-facebook"></i></a>
-                            <a class="tw-ic"><i class="fa fa-twitter"></i></a>
-                            <a class="gplus-ic"><i class="fa fa-google-plus"></i></a>
-                            <a class="li-ic"><i class="fa fa-linkedin"></i></a>
-                            <a class="email-ic"><i class="fa fa-envelope-o"></i></a>
-                        </div>
-                        <p>Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.</p>
-                    </div>
-                </div>
             </div>
             <hr>
         </section>
@@ -176,7 +138,7 @@
                 placeId: GetParameterValues("place"),
             }, function (place, status) {
                 if (status === google.maps.places.PlacesServiceStatus.OK) {
-                    console.log(place);
+                   
                     var numImages = place.photos.length;
                     if (numImages && numImages > 0) {
                         img = place.photos[[Math.floor(Math.random() * numImages)]].getUrl({ 'maxWidth': 300, 'maxHeight': 300 });
@@ -188,7 +150,48 @@
                     $("#placeName").text(place.name);
                     $("#placePhone").text(place.formatted_phone_number);
                     $("#placeWeb").text(place.website);
+                    console.log(place.reviews);
+                    for (var i = 0; i < place.reviews.length; i++) {
+                        var url, name, text, rating
 
+                        if (place.reviews[i].profile_photo_url)
+                            url = place.reviews[i].profile_photo_url;
+                        else 
+                            url = "http://icons.iconarchive.com/icons/danleech/simple/512/google-plus-icon.png";
+                        
+                        if (place.reviews[i].author_name) 
+                            name = place.reviews[i].author_name;
+                        else
+                            name = "Not Available";
+
+                        if (place.reviews[i].text)
+                            text = place.reviews[i].text;
+                        else
+                            text = "Not Available";
+
+                        if (place.reviews[i].text)
+                            rating = place.reviews[i].rating;
+                        else
+                            rating = 0;
+                 
+
+                        $("#comment-section").append( ''+
+                            '<div class="author-box"> ' +
+                                '<div class="row"> ' +
+                                    '<hr>' +
+                                    '<div class="col-xs-12 col-sm-2"> ' +
+                                        '<img src="' + url + '" class="img-fluid rounded-circle z-depth-2" onError="this.src = http://7108-presscdn-0-78.pagely.netdna-cdn.com/wp-content/uploads/2013/08/google-plus.png">' +
+                                        '<br/><a  class="gplus-ic" href="' + place.reviews[i].author_url + '"><i class="fa fa-google-plus"></i></a>' +
+                                    '</div>' +
+                                    '<div class="col-xs-12 col-sm-10">' +
+                                        '<p><strong class="text-capitalize">' + name + '</strong></p><br/>' +
+                                        '<div class="star-ratings-sprite"><span style="width:' + place.reviews[i].rating * 20 + '%" class="star-ratings-sprite-rating"></span></div>' +                  
+                                        '<br/><p>' + text + '' +
+                                    '</div>'+
+                                '</div>'+
+                            '</div>');
+                        
+                    }
 
                 } else
                     console.log("doesnt work with");

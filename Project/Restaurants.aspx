@@ -3,21 +3,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     <div class="container">
 
-        <div class="row" id="restaurant-cont">
-            <!--<% for (int i = 0; i < 12; i++)
-                {%>
-            <div class="col-md-4">
-                <a href="ViewItem.aspx" class="thumbnail">
-                    <img src="https://bytesizemoments.com/wp-content/uploads/2014/04/placeholder3.png" alt="" class="img-responsive fake-img" />
-                    <p class="caption lead">Some text</p>
-                </a>
-            </div>
-            <% } %>
-        </div> -->
-
-    </div>
-
-    <div class="container">
+        <div class="row" id="restaurant-cont"></div>
 
         <nav aria-label="...">
             <ul class="pagination">
